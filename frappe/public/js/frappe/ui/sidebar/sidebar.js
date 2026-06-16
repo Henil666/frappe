@@ -753,6 +753,10 @@ frappe.ui.Sidebar = class Sidebar {
 		switch (route.length) {
 			case 1:
 				return route[0];
+			case 2:
+				// e.g. ["query-report", "General Ledger"] → "General Ledger"
+				// e.g. ["List", "Sales Invoice"] → "Sales Invoice"
+				return route[1];
 			case 3:
 				return route[0] === "Workspaces" && route[1] === "private" ? route[2] : route[1];
 			default:
